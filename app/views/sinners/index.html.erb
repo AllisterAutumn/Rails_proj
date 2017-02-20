@@ -1,0 +1,17 @@
+
+<h1>Confess and be saved</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Sin</th>
+  </tr>
+
+  <% @sinners.each do |sinner| %>
+    <tr>
+      <td><%= sinner.name %></td>
+      <td><%= sinner.sin %></td>
+      <td><%= link_to 'Show', sinner_path(sinner) %></td>
+    </tr>
+  <% end %>
+</table
