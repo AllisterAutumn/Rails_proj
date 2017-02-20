@@ -1,0 +1,15 @@
+<%= form_for :sinner, url: sinners_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :sin %><br>
+    <%= f.text_area :sin %>
+  </p>
+
+  <p>
+    <input type="submit" name="commit" value="Confess" data-disable-with="Confess">
+  </p>
+<% end %>

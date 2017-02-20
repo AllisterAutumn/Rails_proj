@@ -1,0 +1,12 @@
+<form method="POST" action="/people">
+<label>First Name
+  <input type="text" name="person[first_name]" />
+</label>
+<label>Last Name
+  <input type="text" name="person[last_name]" />
+</label>
+<label>What are you in for?
+<input type="text" name="person[sin]" /></label>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+<button type="">Submit</button>
+</form>
