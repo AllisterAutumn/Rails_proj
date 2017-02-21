@@ -1,17 +1,21 @@
 
 <h1>Confess and be saved</h1>
-
+<%= link_to 'Confess', new_sinner_path %>
 <table>
   <tr>
     <th>Name</th>
     <th>Sin</th>
   </tr>
-
   <% @sinners.each do |sinner| %>
     <tr>
       <td><%= sinner.name %></td>
       <td><%= sinner.sin %></td>
       <td><%= link_to 'Show', sinner_path(sinner) %></td>
+      <td><%= link_to 'Destroy', sinner_path(sinner),
+              method: :delete,
+              data: { confirm: 'We don\'t forget' } %></td>
     </tr>
   <% end %>
 </table
+
+

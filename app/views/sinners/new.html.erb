@@ -1,6 +1,20 @@
 <!--This is my form for new sinners to conress their sins.
 It uses partials to template out the names of the form. Rails makes forms very easy. -->
 <%= form_for :sinner, url: sinners_path do |f| %>
+
+   <% if @sinner.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@sinner.errors.count, "error") %> are stopping your eternal damnation:
+      </h2>
+      <ul>
+        <% @sinner.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
